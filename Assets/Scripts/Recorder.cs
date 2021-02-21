@@ -9,17 +9,21 @@ public class Recorder : MonoBehaviour
 {
     public TMP_Text dataLocation;
     public GameObject[] objectsToRecord;
-    public int currentframe = 0;
+    public int currentFrame = 0;
     public bool startRecording;
     public bool endRecording;
     private SaveFile save;
 
     private void Start()
     {
+        InitialiseValues();        
+    }
+    public void InitialiseValues()
+    {
         save = new SaveFile();
         save.positions = new List<VectorList>();
         save.rotations = new List<QuaternionList>();
-        currentframe = 0;
+        currentFrame = 0;
         for (int i = 0; i < objectsToRecord.Length; i++)
         {
             save.positions.Add(new VectorList());
@@ -27,14 +31,14 @@ public class Recorder : MonoBehaviour
         }
         for (int i = 0; i < objectsToRecord.Length; i++)
         {
-                save.positions[i].position = new List<Vector3>();
-                save.rotations[i].rotation = new List<Quaternion>();
+            save.positions[i].position = new List<Vector3>();
+            save.rotations[i].rotation = new List<Quaternion>();
         }
     }
 
     private void Update()
     {
-        dataLocation.text = Application.persistentDataPath + "./Data/ ______ Frame: " + currentframe ;
+        dataLocation.text = Application.persistentDataPath + "./Data/ ______ Frame: " + currentFrame ;
         if (OVRInput.Get(OVRInput.RawButton.A, OVRInput.Controller.All))
         {
             startRecording = true;
@@ -50,7 +54,7 @@ public class Recorder : MonoBehaviour
                     //save.positions[i].position[currentframe] = objectsToRecord[i].transform.position;
                     //save.rotations[i].rotation[currentframe] = objectsToRecord[i].transform.rotation;
                 }
-                currentframe++;
+                currentFrame++;
             }
             if (OVRInput.Get(OVRInput.RawButton.X, OVRInput.Controller.All) || endRecording)
             {               
@@ -108,7 +112,7 @@ public class Recorder : MonoBehaviour
             File.WriteAllText(Application.dataPath + "./Data/Animation Output.txt", output);
         }
         Debug.Log(Application.dataPath + "./Data/Animation Output.txt");
-        
+        gameObject.GetComponent<Recorder>().enabled = false;
         Application.Quit();
     }
 

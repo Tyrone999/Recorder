@@ -1,0 +1,21 @@
+WHEN RECORDING, ITEMS NEEDED TO BE DRAGGED INTO THE RECORDER NEEDS TO BE IN THE FOLOWING ORDER 
+
+Head
+LeftArm
+RightArm
+Lower Torso
+LeftLeg
+RightLeg
+Extra Props
+
+WHEN PLAYING, ITEMS NEEDED TO BE DRAGGED INTO THE ANIMATION PLAYER NEEDS TO BE IN THE FOLOWING ORDER
+
+Head
+LeftArm
+RightArm
+Lower Torso
+LeftLeg
+RightLeg
+Extra Props (Same order as recording extra props)*
+
+*To help with this make a temporary read me per project where you declare the order of all the objects.
