@@ -7,6 +7,7 @@ using TMPro;
 
 public class Recorder : MonoBehaviour
 {
+    public string dataPath;
     public TMP_Text dataLocation;
     public GameObject[] objectsToRecord;
     public int currentFrame = 0;
@@ -20,6 +21,7 @@ public class Recorder : MonoBehaviour
     }
     public void InitialiseValues()
     {
+        dataPath = Application.persistentDataPath + "./Data";
         save = new SaveFile();
         save.positions = new List<VectorList>();
         save.rotations = new List<QuaternionList>();
@@ -38,7 +40,7 @@ public class Recorder : MonoBehaviour
 
     private void Update()
     {
-        dataLocation.text = Application.persistentDataPath + "./Data/ ______ Frame: " + currentFrame ;
+        dataLocation.text =  dataPath + "/ ______ Frame: " + currentFrame ;
         if (OVRInput.Get(OVRInput.RawButton.A, OVRInput.Controller.All))
         {
             startRecording = true;
@@ -51,14 +53,12 @@ public class Recorder : MonoBehaviour
                 {                    
                     save.positions[i].position.Add(objectsToRecord[i].transform.position);
                     save.rotations[i].rotation.Add(objectsToRecord[i].transform.rotation);
-                    //save.positions[i].position[currentframe] = objectsToRecord[i].transform.position;
-                    //save.rotations[i].rotation[currentframe] = objectsToRecord[i].transform.rotation;
                 }
                 currentFrame++;
             }
             if (OVRInput.Get(OVRInput.RawButton.X, OVRInput.Controller.All) || endRecording)
             {               
-                startRecording = false;
+                //startRecording = false;
                 SaveRecordingAsText();
             }
         }        
@@ -95,23 +95,22 @@ public class Recorder : MonoBehaviour
         }
 
         string output = JsonConvert.SerializeObject(jsonOutput as JsonSaveFile);
-        if (Directory.Exists(Application.dataPath + "./Data/"))
+        if (Directory.Exists(dataPath))
         {
-            if (!File.Exists((Application.dataPath + "./Data/Animation Output.txt")))
+            if (!File.Exists(dataPath))
             {
-                File.Create(Application.dataPath + "./Data/Animation Output.txt");
+                File.Create(dataPath);
             }
-            File.WriteAllText(Application.dataPath + "./Data/Animation Output.txt", output);
+            File.WriteAllText(dataPath + "/Animation Output.txt", output);
         }
         else
         {
-            Directory.CreateDirectory(Application.dataPath + "./Data/");
+            Directory.CreateDirectory(dataPath);
 
             //File.Create(Application.dataPath + "./Data/Animation Output.txt");
 
-            File.WriteAllText(Application.dataPath + "./Data/Animation Output.txt", output);
+            File.WriteAllText(dataPath + "/Animation Output.txt", output);
         }
-        Debug.Log(Application.dataPath + "./Data/Animation Output.txt");
         gameObject.GetComponent<Recorder>().enabled = false;
         Application.Quit();
     }

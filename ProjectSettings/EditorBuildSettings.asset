@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Antilatency/OculusSample/Scenes/AltOculusSample.unity
+    guid: e0b0ffc8dc600294e98a8f4074769d81
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 202f82eac038a5f4fa888f91faf75e72,
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: eb4f7f5d27635b845b125e75b1ac18d4,
       type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3bfb3e4737a8b0543bdc07db7e1939c3,
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 474701e2997e3fe458bef72435e6d48e,
       type: 2}
