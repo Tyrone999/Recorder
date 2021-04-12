@@ -1,21 +1,26 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Antilatency.Integration.dll:
-    - Antilatency.Integration.AltEnvironment
-    - Antilatency.Integration.AltEnvironmentMarkersDrawer
-    - Antilatency.Integration.DeviceNetwork
-    Antilatency.OculusSample.dll:
-    - Antilatency.OculusSample.AltTrackingOculus
     Assembly-CSharp.dll:
+    - AnimationPlayer
     - ONSPSettings
+    - Recorder
     Oculus.VR.Editor.dll:
     - Assets.Oculus.VR.Editor.OVRPlatformToolSettings
     - OVRConfig
     Oculus.VR.dll:
     - OVRCameraRig
     - OVRControllerHelper
+    - OVRDebugInfo
+    - OVRHand
     - OVRHeadsetEmulator
     - OVRManager
+    - OVRMesh
+    - OVRMeshRenderer
+    - OVRPlayerController
+    - OVRSceneSampleController
+    - OVRScreenFade
+    - OVRSkeleton
+    - OVRSkeletonRenderer
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -23,6 +28,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     Unity.XR.Management.Editor.dll:
     - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
     Unity.XR.Management.dll:
@@ -44,8 +50,10 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
   sceneClasses:
-    Assets/Antilatency/OculusSample/Scenes/AltOculusSample.unity:
+    Assets/Scenes/SampleScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -72,6 +80,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -85,48 +95,78 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11540}
+      Script: {instanceID: 11454}
     - Class: 114
-      Script: {instanceID: 11702}
+      Script: {instanceID: 11536}
     - Class: 114
-      Script: {instanceID: 12264}
+      Script: {instanceID: 11698}
     - Class: 114
-      Script: {instanceID: 12344}
+      Script: {instanceID: 11946}
     - Class: 114
-      Script: {instanceID: 12468}
+      Script: {instanceID: 12112}
     - Class: 114
-      Script: {instanceID: 12528}
+      Script: {instanceID: 12260}
     - Class: 114
-      Script: {instanceID: 12630}
+      Script: {instanceID: 12322}
     - Class: 114
-      Script: {instanceID: 13040}
+      Script: {instanceID: 12340}
     - Class: 114
-      Script: {instanceID: 13556}
+      Script: {instanceID: 12464}
+    - Class: 114
+      Script: {instanceID: 12524}
+    - Class: 114
+      Script: {instanceID: 12626}
+    - Class: 114
+      Script: {instanceID: 12788}
+    - Class: 114
+      Script: {instanceID: 12930}
+    - Class: 114
+      Script: {instanceID: 13088}
+    - Class: 114
+      Script: {instanceID: 13190}
+    - Class: 114
+      Script: {instanceID: 13196}
+    - Class: 114
+      Script: {instanceID: 13552}
+    - Class: 114
+      Script: {instanceID: 13572}
     - Class: 114
       Script: {instanceID: 13576}
     - Class: 114
-      Script: {instanceID: 13832}
+      Script: {instanceID: 13782}
     - Class: 114
-      Script: {instanceID: 14012}
+      Script: {instanceID: 13878}
     - Class: 114
-      Script: {instanceID: 14076}
+      Script: {instanceID: 13964}
     - Class: 114
-      Script: {instanceID: 14094}
+      Script: {instanceID: 14008}
     - Class: 114
-      Script: {instanceID: 14212}
+      Script: {instanceID: 14090}
     - Class: 114
-      Script: {instanceID: 14310}
+      Script: {instanceID: 14208}
     - Class: 114
-      Script: {instanceID: 14552}
+      Script: {instanceID: 14544}
+    - Class: 114
+      Script: {instanceID: 14548}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
     - Class: 137
+      Script: {instanceID: 0}
+    - Class: 143
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
@@ -571,7 +611,7 @@ ScriptsOnlyBuild:
     className: OVRVignette
   - hash:
       serializedVersion: 2
-      Hash: 96459423f3717841e43e01f215a2cae6
+      Hash: c69e68873447f0b0d43602b63128b803
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AnimationPlayer
@@ -1159,7 +1199,7 @@ ScriptsOnlyBuild:
     className: CharacterCapsule
   - hash:
       serializedVersion: 2
-      Hash: 704fe75cc8ad218a01c14a1ab2aea70b
+      Hash: 3802c93c1333443b523750097aedb3b2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Recorder
@@ -1909,6 +1949,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
-  - Assets/Antilatency/OculusSample/Scenes/AltOculusSample.unity
-  playerPath: D:/Tyrone/Tyrone VR _Slash_ AR/Save Sensor Positions/Recorder/Builds/Head
-    Recorder Test 3.apk
+  - Assets/Scenes/SampleScene.unity
+  playerPath: E:/GitHub Desktop Main VR Project/Recorder/Builds/FINAL PROGRESS TEST.apk

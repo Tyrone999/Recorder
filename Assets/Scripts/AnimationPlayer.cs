@@ -16,7 +16,7 @@ public class AnimationPlayer : MonoBehaviour
     public bool playAnimation;
     public bool endAnimation;
     public bool playOnStart;
-    public TextAsset mainAnimation;
+    public string mainAnimation;
     private SaveFile load;
 
     private void Start()
@@ -25,6 +25,9 @@ public class AnimationPlayer : MonoBehaviour
     }
     public void InitialiseValues()
     {
+        Recorder recorder = FindObjectOfType<Recorder>();
+        recorder.enabled = false;
+
         load = new SaveFile();
         load.positions = new List<VectorList>();
         load.rotations = new List<QuaternionList>();
@@ -54,6 +57,10 @@ public class AnimationPlayer : MonoBehaviour
     }
     private void Update()
     {
+        if (OVRInput.Get(OVRInput.RawButton.A, OVRInput.Controller.All))
+        {
+            playAnimation = true;
+        }
 
         if (mainAnimation != null)
         {
@@ -88,7 +95,7 @@ public class AnimationPlayer : MonoBehaviour
     }
     public void PlayRecordingfromText()
     {
-        string anim = mainAnimation.text;
+        string anim = mainAnimation;
         JsonSaveFile input = JsonConvert.DeserializeObject<JsonSaveFile>(anim);
         gameObject.GetComponent<Recorder>().enabled = false;
         for (int i = 0; i < input.values.Count; i++)
@@ -107,6 +114,6 @@ public class AnimationPlayer : MonoBehaviour
             }
         }
         maxFrame = load.positions[0].position.Count;
-        Application.Quit();
+        //Application.Quit();
     }
 }

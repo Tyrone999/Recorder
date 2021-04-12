@@ -15,13 +15,16 @@ public class Recorder : MonoBehaviour
     public bool endRecording;
     private SaveFile save;
 
+    public GameObject mirror;
+    public GameObject playback;
+
     private void Start()
     {
         InitialiseValues();        
     }
     public void InitialiseValues()
     {
-        dataPath = Application.persistentDataPath + "./Data";
+        dataPath = Application.dataPath + "/FILES";
         save = new SaveFile();
         save.positions = new List<VectorList>();
         save.rotations = new List<QuaternionList>();
@@ -95,24 +98,27 @@ public class Recorder : MonoBehaviour
         }
 
         string output = JsonConvert.SerializeObject(jsonOutput as JsonSaveFile);
-        if (Directory.Exists(dataPath))
-        {
-            if (!File.Exists(dataPath))
-            {
-                File.Create(dataPath);
-            }
-            File.WriteAllText(dataPath + "/Animation Output.txt", output);
-        }
-        else
-        {
-            Directory.CreateDirectory(dataPath);
+        //if (Directory.Exists(dataPath))
+        //{
+        //    if (!File.Exists(dataPath))
+        //    {
+        //        File.Create(dataPath);
+        //    }
+        //    File.WriteAllText(dataPath + "/Animation Output.txt", output);
+        //}
+        //else
+        //{
+        //    Directory.CreateDirectory(dataPath);
 
-            //File.Create(Application.dataPath + "./Data/Animation Output.txt");
+        //    //File.Create(Application.dataPath + "./Data/Animation Output.txt");
 
-            File.WriteAllText(dataPath + "/Animation Output.txt", output);
-        }
+        //    File.WriteAllText(dataPath + "/Animation Output.txt", output);
+        //}
+        //gameObject.GetComponent<Recorder>().enabled = false;
+        mirror.SetActive(false);
+        playback.GetComponent<AnimationPlayer>().mainAnimation = output;
+        playback.SetActive(true);
         gameObject.GetComponent<Recorder>().enabled = false;
-        Application.Quit();
     }
 
 }
