@@ -24,7 +24,7 @@ public class Recorder : MonoBehaviour
     }
     public void InitialiseValues()
     {
-        dataPath = Application.dataPath + "/FILES";
+        //dataPath = Application.dataPath + "/FILES";
         save = new SaveFile();
         save.positions = new List<VectorList>();
         save.rotations = new List<QuaternionList>();
@@ -61,10 +61,21 @@ public class Recorder : MonoBehaviour
             }
             if (OVRInput.Get(OVRInput.RawButton.X, OVRInput.Controller.All) || endRecording)
             {               
-                //startRecording = false;
-                SaveRecordingAsText();
+                startRecording = false;
+                //SaveRecordingAsText();
+                Debug.Log(save.rotations[0].rotation[300]);
+                PlayAnimation();
             }
         }        
+    }
+
+    public void PlayAnimation()
+    {
+        mirror.SetActive(false);
+        playback.GetComponent<AnimationPlayer>().save = save;
+        playback.SetActive(true);
+        gameObject.GetComponent<Recorder>().enabled = false;
+        playback.GetComponent<AnimationPlayer>().enabled = true;
     }
 
     public void SaveRecordingAsText()
