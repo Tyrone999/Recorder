@@ -8,8 +8,10 @@ ScriptsOnlyBuild:
     - Antilatency.Integration.DeviceNetwork
     Assembly-CSharp.dll:
     - AnimationPlayer
+    - Grab
     - ONSPSettings
     - Recorder
+    - RotateHandle
     Oculus.VR.Editor.dll:
     - Assets.Oculus.VR.Editor.OVRPlatformToolSettings
     - OVRConfig
@@ -101,67 +103,71 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13198}
+      Script: {instanceID: 11454}
     - Class: 114
-      Script: {instanceID: 13280}
+      Script: {instanceID: 11536}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 11698}
     - Class: 114
-      Script: {instanceID: 13514}
+      Script: {instanceID: 11782}
     - Class: 114
-      Script: {instanceID: 13670}
+      Script: {instanceID: 11946}
     - Class: 114
-      Script: {instanceID: 13830}
+      Script: {instanceID: 12112}
     - Class: 114
-      Script: {instanceID: 13970}
+      Script: {instanceID: 12260}
     - Class: 114
-      Script: {instanceID: 14028}
+      Script: {instanceID: 12322}
     - Class: 114
-      Script: {instanceID: 14046}
+      Script: {instanceID: 12340}
     - Class: 114
-      Script: {instanceID: 14160}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 14212}
+      Script: {instanceID: 12524}
     - Class: 114
-      Script: {instanceID: 14310}
+      Script: {instanceID: 12626}
     - Class: 114
-      Script: {instanceID: 14470}
+      Script: {instanceID: 12788}
     - Class: 114
-      Script: {instanceID: 14602}
+      Script: {instanceID: 12930}
     - Class: 114
-      Script: {instanceID: 14700}
+      Script: {instanceID: 13036}
     - Class: 114
-      Script: {instanceID: 14750}
+      Script: {instanceID: 13088}
     - Class: 114
-      Script: {instanceID: 14846}
+      Script: {instanceID: 13190}
     - Class: 114
-      Script: {instanceID: 14852}
+      Script: {instanceID: 13196}
     - Class: 114
-      Script: {instanceID: 15192}
+      Script: {instanceID: 13302}
     - Class: 114
-      Script: {instanceID: 15212}
+      Script: {instanceID: 13554}
     - Class: 114
-      Script: {instanceID: 15216}
+      Script: {instanceID: 13574}
     - Class: 114
-      Script: {instanceID: 15412}
+      Script: {instanceID: 13578}
     - Class: 114
-      Script: {instanceID: 15498}
+      Script: {instanceID: 13784}
     - Class: 114
-      Script: {instanceID: 15582}
+      Script: {instanceID: 13880}
     - Class: 114
-      Script: {instanceID: 15626}
+      Script: {instanceID: 13966}
     - Class: 114
-      Script: {instanceID: 15688}
+      Script: {instanceID: 14010}
     - Class: 114
-      Script: {instanceID: 15706}
+      Script: {instanceID: 14074}
     - Class: 114
-      Script: {instanceID: 15812}
+      Script: {instanceID: 14092}
     - Class: 114
-      Script: {instanceID: 15906}
+      Script: {instanceID: 14210}
     - Class: 114
-      Script: {instanceID: 16138}
+      Script: {instanceID: 14308}
     - Class: 114
-      Script: {instanceID: 16142}
+      Script: {instanceID: 14546}
+    - Class: 114
+      Script: {instanceID: 14550}
+    - Class: 114
+      Script: {instanceID: 40384}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1297,6 +1303,12 @@ ScriptsOnlyBuild:
     className: TouchController
   - hash:
       serializedVersion: 2
+      Hash: 561c28a9771b65890773f16562ccb9d9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RotateHandle
+  - hash:
+      serializedVersion: 2
       Hash: c6c39ad48c140a867a97bff30ed415e8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1961,8 +1973,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 7775ffbbc3fbc54cf9a74db8a4a6a55b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Grab
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   playerPath: D:/Tyrone/Tyrone VR _Slash_ AR/Save Sensor Positions/Recorder/Builds/Antilatency
-    Left Leg Test.apk
+    BUCKET.apk

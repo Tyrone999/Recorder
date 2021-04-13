@@ -11,7 +11,7 @@ public class RotateHandle : MonoBehaviour
     {
         if (HandObject != null)
         {
-            transform.RotateAround(Vector3.zero,Vector3.down, angleDeltaDegrees(OldRelativeHandPosition, transform.InverseTransformPoint(HandObject.transform.position)));
+            transform.RotateAround(transform.parent.position,Vector3.down, angleDeltaDegrees(OldRelativeHandPosition, transform.InverseTransformPoint(HandObject.transform.position)));
             OldRelativeHandPosition = transform.InverseTransformPoint(HandObject.transform.position);
         }
     }
