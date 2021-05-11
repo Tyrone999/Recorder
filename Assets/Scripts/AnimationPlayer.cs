@@ -6,6 +6,7 @@ using TMPro;
 using OVRSimpleJSON;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class AnimationPlayer : MonoBehaviour
 {
@@ -62,8 +63,14 @@ public class AnimationPlayer : MonoBehaviour
     }
     private void Update()
     {
+        if (OVRInput.Get(OVRInput.RawButton.LThumbstickDown, OVRInput.Controller.All))
+        {
+            SceneManager.LoadScene(0);
+        }
         if (OVRInput.Get(OVRInput.RawButton.A, OVRInput.Controller.All))
         {
+            currentFrame = 0;
+            endAnimation = false;
             playAnimation = true;
         }
 
@@ -88,6 +95,7 @@ public class AnimationPlayer : MonoBehaviour
             {
                 objectsToMove[i].transform.position = load.positions[i].position[currentFrame] + new Vector3 (0,0,1.6f);
                 objectsToMove[i].transform.rotation = load.rotations[i].rotation[currentFrame];
+                //objectsToMove[i].transform.Rotate(0, 180, 0);
             }
             currentFrame++;
         }

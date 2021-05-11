@@ -220,16 +220,23 @@
     <Compile Include="Assets\Oculus\Spatializer\scripts\OculusSpatializerUnity.cs" />
     <Compile Include="Assets\Oculus\Spatializer\scripts\helpers\ONSPReflectionZone.cs" />
     <Compile Include="Assets\RotateHandle.cs" />
+    <Compile Include="Assets\Scripts\AddLetter.cs" />
+    <Compile Include="Assets\Scripts\AnimationNameDisplayer.cs" />
     <Compile Include="Assets\Scripts\AnimationPlayer.cs" />
+    <Compile Include="Assets\Scripts\Backspace.cs" />
     <Compile Include="Assets\Scripts\BallMovementTest.cs" />
     <Compile Include="Assets\Scripts\BowStringGrab.cs" />
     <Compile Include="Assets\Scripts\ColorSelector.cs" />
     <Compile Include="Assets\Scripts\CurvedPointer.cs" />
     <Compile Include="Assets\Scripts\Grab.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\PersonalDebugConsole.cs" />
     <Compile Include="Assets\Scripts\PhysicsPointer.cs" />
     <Compile Include="Assets\Scripts\QuaternionList.cs" />
     <Compile Include="Assets\Scripts\Recorder.cs" />
     <Compile Include="Assets\Scripts\SaveFile.cs" />
+    <Compile Include="Assets\Scripts\SaveName.cs" />
+    <Compile Include="Assets\Scripts\StaticVariables.cs" />
     <Compile Include="Assets\Scripts\VRInput.cs" />
     <Compile Include="Assets\Scripts\VR_RIG.cs" />
     <Compile Include="Assets\Scripts\VectorList.cs" />
@@ -242,8 +249,10 @@
     <None Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Materials\CrosshairZCheat.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_Loader.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\GradientSkybox.shader" />
+    <None Include="Assets\FILES\Test Animation 2.txt" />
     <None Include="Assets\Data\READ ME.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_SingleComponent.shader" />
+    <None Include="Assets\FILES\animationNew.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShader.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Expressive\AvatarEyeLens.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Expressive\Avatar_PC_SingleComponentExpressive.shader" />
@@ -258,6 +267,7 @@
     <None Include="Assets\FILES\Animation Output.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderPBSV2.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_CombinedMesh.shader" />
+    <None Include="Assets\FILES\animation.txt" />
     <None Include="Assets\Oculus\SampleFramework\Core\Video\Resources\Multiview Stereo.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\DebugUI\Fonts\Montserrat\OFL.txt" />
     <None Include="Assets\Oculus\Avatar\Samples\SocialStarter\README.txt" />
@@ -276,6 +286,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\OculusSampleTrainSmokeShader.shader" />
+    <None Include="Assets\FILES\Test Animation 1.txt" />
     <None Include="Assets\Oculus\SampleFramework\Usage\OVROverlayCanvas\Shaders\UI Prerendered Opaque.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\Video\Plugins\Android\Audio360\NOTICE.txt" />
     <None Include="Assets\Oculus\SampleFramework\Usage\Locomotion\Shaders\TriPlanarWorld.shader" />
@@ -878,6 +889,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{FF98A6BF-E479-DCC9-96E5-5947A3709AA9}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Oculus.Platform.Editor.csproj">
       <Project>{E6BE8E11-B1D5-FB4F-1122-10584E3BBFD3}</Project>
       <Name>Oculus.Platform.Editor</Name>
