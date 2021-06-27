@@ -148,11 +148,11 @@
     <None Include="Assets\Oculus\VR\NOTICE.txt" />
     <None Include="Assets\Oculus\VR\Shaders\OVRVignette.shader" />
     <None Include="Assets\Oculus\VR\Resources\Unlit Transparent Color.shader" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>E:/GitHub Desktop Main VR Project/Recorder/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>E:/GitHub Desktop Main VR Project/Recorder/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:/GitHub Desktop Main VR Project/Recorder/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity/2019.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

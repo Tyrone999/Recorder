@@ -137,7 +137,7 @@ public class Recorder : MonoBehaviour
         objectsInOrder = new string[objectsToRecord.Length];
         for (int i = 0; i < objectsToRecord.Length; i++)
         {
-            objectsInOrder[i] = objectsToRecord[i].name;
+            objectsInOrder[i] = objectsToRecord[i].transform.name;
         }
         string objOutput = JsonUtility.ToJson(objectsInOrder, true);
         File.WriteAllText(dataPath + animationName + " " + animationTake + " ObjectsInOrder" + ".txt",objOutput);

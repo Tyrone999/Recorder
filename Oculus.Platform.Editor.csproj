@@ -68,11 +68,11 @@
     <Compile Include="Assets\Oculus\Platform\Editor\OculusPluginUpdaterStub.cs" />
     <Compile Include="Assets\Oculus\Platform\Editor\OculusStandalonePlatformResponse.cs" />
     <None Include="Assets\Oculus\Platform\Editor\Oculus.Platform.Editor.asmdef" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>E:/GitHub Desktop Main VR Project/Recorder/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>E:/GitHub Desktop Main VR Project/Recorder/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:/GitHub Desktop Main VR Project/Recorder/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>E:/GitHub Desktop Main VR Project/Recorder/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
