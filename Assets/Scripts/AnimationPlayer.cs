@@ -63,7 +63,7 @@ public class AnimationPlayer : MonoBehaviour
     }
     private void Update()
     {
-        if (OVRInput.Get(OVRInput.RawButton.LThumbstickDown, OVRInput.Controller.All))
+        if (OVRInput.Get(OVRInput.RawButton.X, OVRInput.Controller.All))
         {
             SceneManager.LoadScene(0);
         }
