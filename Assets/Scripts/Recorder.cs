@@ -7,7 +7,6 @@ using TMPro;
 
 public class Recorder : MonoBehaviour
 {
-    private string[] objectsInOrder;
     public int animationTake = 0;
     public string animationName;
     public string dataPath;
@@ -134,13 +133,12 @@ public class Recorder : MonoBehaviour
         }
         animationTake++;
         File.WriteAllText(dataPath + animationName + " " + animationTake + ".txt", output);
-        objectsInOrder = new string[objectsToRecord.Length];
+        string objectsInOrder = "Objects: \n";
         for (int i = 0; i < objectsToRecord.Length; i++)
         {
-            objectsInOrder[i] = objectsToRecord[i].transform.name;
+            objectsInOrder += " \n" + objectsToRecord[i].transform.name;
         }
-        string objOutput = JsonUtility.ToJson(objectsInOrder, true);
-        File.WriteAllText(dataPath + animationName + " " + animationTake + " ObjectsInOrder" + ".txt",objOutput);
+        File.WriteAllText(dataPath + animationName + " " + animationTake + " ObjectsInOrder" + ".txt",objectsInOrder);
         debug.Log("Saved Recording Successfully, Attempting to Playback Recording");
 
         playback.SetActive(true);
