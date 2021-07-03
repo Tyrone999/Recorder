@@ -2761,4 +2761,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: E:/GitHub Desktop Main VR Project/Recorder/Builds/home test apk 3.apk
+  playerPath: E:/GitHub Desktop Main VR Project/Recorder/Builds/Working Build.apk
